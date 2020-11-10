@@ -1,0 +1,11 @@
+Teleport to spawn: "&6You have been teleport to spawn."
+No spawn point create: "&4No spawn point are set, you can set one with &c/setspawnpoint"
+Set spawn successful: "&6You have successful set spawn point on your server."
+Withdraw money: "&6You have use /spawn command and you have been withdraw %money% and you have now %balance%."
+Not enough money: "&cYou don't have enough money to do that, you need %money%"
+Reload command: "&cYou have been reload the config file."
+
+#Should /spawn command cost money?
+Cost money:
+  Enable: false
+  Cost: 1000
