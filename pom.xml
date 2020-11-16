@@ -6,7 +6,7 @@
 
     <groupId>me.zachary</groupId>
     <artifactId>spawn</artifactId>
-    <version>1.0</version>
+    <version>1.0.1</version>
     <packaging>jar</packaging>
 
     <name>Spawn</name>
