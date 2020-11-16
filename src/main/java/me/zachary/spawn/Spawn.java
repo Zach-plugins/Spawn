@@ -3,6 +3,7 @@ package me.zachary.spawn;
 import me.zachary.spawn.commands.Reloadcommand;
 import me.zachary.spawn.commands.Setspawncommand;
 import me.zachary.spawn.commands.Spawncommand;
+import me.zachary.spawn.storage.StorageFile;
 import net.milkbowl.vault.economy.Economy;
 import org.bukkit.plugin.RegisteredServiceProvider;
 import xyz.theprogramsrc.supercoreapi.global.Metrics;
@@ -20,6 +21,7 @@ public final class Spawn extends SpigotPlugin {
         new Setspawncommand(this);
         new Spawncommand(this);
         new Reloadcommand(this);
+        new StorageFile(this);
 
         saveDefaultConfig();
 
@@ -54,5 +56,9 @@ public final class Spawn extends SpigotPlugin {
     @Override
     public boolean isPaid() {
         return false;
+    }
+
+    public StorageFile getStorageFile(){
+        return new StorageFile(this);
     }
 }

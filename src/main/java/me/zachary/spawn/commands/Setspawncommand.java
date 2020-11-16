@@ -25,8 +25,7 @@ public class Setspawncommand extends SpigotCommand {
         if (!player.hasPermission("spawn.setspawnpoint")) return CommandResult.NO_PERMISSION;
 
         Location location = player.getLocation();
-        spawn.getConfig().set("Spawn locations", location);
-        spawn.saveConfig();
+        spawn.getStorageFile().set("Spawn locations", location);
 
         player.sendMessage(Chat.color(spawn.getConfig().getString("Set spawn successful")));
         return CommandResult.COMPLETED;

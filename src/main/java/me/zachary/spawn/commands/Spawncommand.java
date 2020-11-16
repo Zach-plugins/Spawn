@@ -28,7 +28,7 @@ public class Spawncommand extends SpigotCommand {
         try {
             if(spawn.getConfig().getBoolean("Cost money.Enable")){
                 if(spawn.econ.getBalance(player) >= spawn.getConfig().getDouble("Cost money.Cost")) {
-                    Location location = (Location) spawn.getConfig().get("Spawn locations");
+                    Location location = (Location) spawn.getStorageFile().get("Spawn locations");
                     player.teleport(location);
                     EconomyResponse r = spawn.econ.withdrawPlayer(player, spawn.getConfig().getDouble("Cost money.Cost"));
                     if(r.transactionSuccess()) {
@@ -38,7 +38,7 @@ public class Spawncommand extends SpigotCommand {
                 }else
                     player.sendMessage(Chat.color(spawn.getConfig().getString("Not enough money").replace("%money%", spawn.econ.format(spawn.getConfig().getDouble("Cost money.Cost")))));
             }else{
-                Location location = (Location) spawn.getConfig().get("Spawn locations");
+                Location location = (Location) spawn.getStorageFile().get("Spawn locations");
                 player.teleport(location);
                 player.sendMessage(Chat.color(spawn.getConfig().getString("Teleport to spawn")));
             }
